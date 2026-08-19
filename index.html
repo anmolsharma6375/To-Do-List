@@ -4,24 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TO-DO-LIST</title>
     <link rel="stylesheet" href="To-Do-List.css">
+    <!-- <link rel="script" href="To-Do-List.js"> -->
+    <script src="To-Do-List.js" defer></script>
+
 </head>
 
-<body>
-    <h1>Simple TO-DO List</h1>
-    <p>Welcome to your simple TO-DO list!.<br>
-        Double click to edit the todo</p>
-    <!-- input and button to add new todos -->
-     <div class="input-container">
-        <input type="text" id="todo-input" placeholder="Enter a todo and press Add or Enter">
-        <button id="add-btn">Add</button>
+<div class="todo-card">
+    <h1>Simple TO-DO List✨</h1>
+    <p class="subtitle">Welcome to your simple TO-DO List!<br>
+    Double click to edit the todo</p>
+
+    <!-- Input and button to add new todos -->
+    <div class="input-container">
+        <!-- <input type="text" id="todo-input" placeholder="What needs to be done?"> -->
+        <input type="text" id="todo-input" placeholder="Add a task..." aria-label="What needs to be done?">
+        <button id="add-btn">Add Task</button>
     </div>
+
     <ul id="todo-list"></ul>
-    <script src="To-Do-List.js"></script>
-    <img src="" height="100px" alt="">
-    <a href=""></a>
-</body>
+
+
+
+    <div id="bulk-delete-container" class="bulk-delete-hidden">
+        <span id="selected-count">0 items selected</span>
+        <button id="delete-selected-btn">Delete Selected</button>
+    </div>
+</div>
 
 
 </html>
