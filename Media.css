@@ -1,0 +1,103 @@
+/* =========================
+   TABLET RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .todo-card {
+        width: 100%;
+        max-width: 100%;
+        padding: 28px 22px;
+        border-radius: 22px;
+    }
+
+    #todo-list {
+        max-height: 55vh;
+    }
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE (FIXED OVERFLOW)
+========================= */
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+        align-items: center;
+        justify-content: center;
+        overflow-x: hidden;
+    }
+
+    .todo-card {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px 14px;
+        border-radius: 20px;
+        box-sizing: border-box;
+    }
+
+    .todo-card h1 {
+        font-size: 1.8rem;
+    }
+
+    .subtitle {
+        font-size: 0.85rem;
+        margin-bottom: 20px;
+    }
+
+    /* Stack input and button perfectly inside the box */
+    .input-container {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    #todo-input {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        padding: 12px 14px;
+    }
+
+    #add-btn {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 12px;
+    }
+
+    #todo-list li {
+        padding: 12px 14px;
+        font-size: 0.9rem;
+    }
+
+    #todo-list {
+        max-height: 50vh;
+    }
+}
+
+
+/* =========================
+   EXTRA SMALL DEVICES
+========================= */
+
+@media (max-width: 320px) {
+    .todo-card {
+        padding: 16px 10px;
+    }
+
+    .todo-card h1 {
+        font-size: 1.5rem;
+    }
+
+    #todo-input,
+    #add-btn {
+        font-size: 0.85rem;
+        padding: 10px;
+    }
+}
