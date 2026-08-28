@@ -204,3 +204,195 @@ body {
 }
 
 
+
+/* =========================
+   TODO ITEMS
+   Works with JS-created <li>
+========================= */
+
+#todo-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    padding: 16px 18px;
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    color: white;
+
+    cursor: pointer;
+
+    word-break: break-word;
+
+    transition: all 0.3s ease;
+
+    animation: taskAppear 0.35s ease;
+}
+
+#todo-list li:hover {
+    transform: translateX(5px);
+
+    background: rgba(255, 255, 255, 0.16);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================
+   TASK APPEAR ANIMATION
+========================= */
+
+@keyframes taskAppear {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   MODERN SCROLLBAR
+========================= */
+
+#todo-list::-webkit-scrollbar {
+    width: 7px;
+}
+
+#todo-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+}
+
+#todo-list::-webkit-scrollbar-thumb {
+    background: linear-gradient(#8b5cf6, #6366f1);
+    border-radius: 20px;
+}
+
+#todo-list::-webkit-scrollbar-thumb:hover {
+    background: #a78bfa;
+}
+
+
+/* Firefox Scrollbar */
+
+#todo-list {
+    scrollbar-width: thin;
+    scrollbar-color: #8b5cf6 rgba(255, 255, 255, 0.05);
+}
+
+/* =========================
+   CUSTOM DELETE BUTTON (FIXED)
+========================= */
+
+#todo-list li button,
+#todo-list li .delete-btn {
+    background: rgba(239, 68, 68, 0.2);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    color: #fca5a5;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+#todo-list li button:hover,
+#todo-list li .delete-btn:hover {
+    background: #ef4444;
+    color: white;
+    border-color: #ef4444;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+    transform: translateY(-1px);
+}
+
+#todo-list li button:active,
+#todo-list li .delete-btn:active {
+    transform: scale(0.95);
+}
+
+
+/* =========================
+   BULK DELETE BAR STYLING
+========================= */
+
+#bulk-delete-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    padding: 12px 18px;
+    border-radius: 14px;
+    margin-top: 20px;
+    color: white;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    
+    /* Hidden by default */
+    opacity: 0;
+    transform: translateY(15px);
+    pointer-events: none;
+    max-height: 0;
+    overflow: hidden;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    border: none;
+}
+
+/* Jab checkboxes select honge tab yeh class active hogi */
+#bulk-delete-container.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    max-height: 100px;
+    padding: 12px 18px;
+    margin-top: 20px;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+#selected-count {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #fca5a5;
+}
+
+#delete-selected-btn {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+#delete-selected-btn:hover {
+    background: #dc2626;
+    transform: translateY(-1px);
+}
+
+#delete-selected-btn:active {
+    transform: scale(0.95);
+}
+
+
+
+
